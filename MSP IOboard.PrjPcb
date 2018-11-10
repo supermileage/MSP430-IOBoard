@@ -56,7 +56,7 @@ GenerateClassCluster=0
 DocumentUniqueId=AJFUGYDW
 
 [Document2]
-DocumentPath=MSP IOboard.PcbDoc
+DocumentPath=..\..\..\..\..\Downloads\SOT95P230X110-3N (3)\Imported SOT95P230X110-3N.lia\SOT95P230X110-3N.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -70,26 +70,9 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=IDJYRFLR
+DocumentUniqueId=SAVVHOSN
 
 [Document3]
-DocumentPath=MSP IOboard.SCHLIB
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=JOLCANGR
-
-[Document4]
 DocumentPath=..\..\..\..\..\Downloads\SON80P400X400X80-10N (1)\Imported (1) SON80P400X400X80-10N.lia\SON80P400X400X80-10N.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -105,6 +88,57 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=NRSRLNWV
+
+[Document4]
+DocumentPath=MSP IOboard.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=MCDMTIYA
+
+[Document5]
+DocumentPath=MSP IOboard.SCHLIB
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=FVSDKFCM
+
+[Document6]
+DocumentPath=MSP IOboard.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=CJCIWKVA
 
 [Configuration1]
 Name=Default Configuration
