@@ -1,0 +1,21 @@
+Added Component: Designator=Q1(SOT95P230X110-3N)
+Added Component: Designator=Q2(SOT95P230X110-3N)
+Added Component: Designator=Q3(SOT95P230X110-3N)
+Added Component: Designator=Q4(SOT95P230X110-3N)
+Added Pin To Net: NetName=PWROUT1 Pin=Q1-1
+Added Pin To Net: NetName=NetQ1_2 Pin=Q1-2
+Added Pin To Net: NetName=4.75-28V Pin=Q1-3
+Added Pin To Net: NetName=PWROUT2 Pin=Q2-1
+Added Pin To Net: NetName=NetQ2_2 Pin=Q2-2
+Added Pin To Net: NetName=4.75-28V Pin=Q2-3
+Added Pin To Net: NetName=PWROUT3 Pin=Q3-1
+Added Pin To Net: NetName=NetQ3_2 Pin=Q3-2
+Added Pin To Net: NetName=4.75-28V Pin=Q3-3
+Added Pin To Net: NetName=PWROUT4 Pin=Q4-1
+Added Pin To Net: NetName=NetQ4_2 Pin=Q4-2
+Added Pin To Net: NetName=4.75-28V Pin=Q4-3
+Added Member To Class: ClassName=MSP IOboard Member=Component Q1 MOSFET-N
+Added Member To Class: ClassName=MSP IOboard Member=Component Q2 MOSFET-N
+Added Member To Class: ClassName=MSP IOboard Member=Component Q3 MOSFET-N
+Added Member To Class: ClassName=MSP IOboard Member=Component Q4 MOSFET-N
+Added Room: Name=MSP IOboard

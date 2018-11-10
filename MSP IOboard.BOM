@@ -1,0 +1,24 @@
+Bill of Material for 
+On 2018-11-10 at 2:38:42 PM
+
+ Comment             Pattern     Quantity  Components
+------------------------------------------------------------------------------
+ Cap                 0603             4    C1, C2, C3, C4               Capacitor            
+ ECS-160-20-46X      XTAL_ECS-160-20-46X    1    Y1                           Crystal 16MHz ±30ppm _Tol_ ±50ppm _Stability_ 20pF FUND 50Ohm 
+ Header 4            HDR1X4           2    P3, P4                       Header, 4-Pin        
+ Header 6            HDR1X6           2    P5, P6                       Header, 6-Pin        
+ Inductor            INDC2520X18N     1    L1                           Inductor             
+ LED0                LEDC2012X70N_598-8120-107F(Primary)    6    D1, D2, D3, D4, D5, D6       Typical INFRARED GaAs LED 
+ MCP2515T-I/SO(SOIC18) SOIC18-1.27-11.5X7.5MM    1    U3                           MCP2515 Series 5.5 V 1 Mb/s Stand Alone SPI Interface CAN Controller- SOIC-18 
+ MOSFET-N            SOT95P230X110-3N    4    Q1, Q2, Q3, Q4               N-Channel MOSFET     
+ MSP430G2553IPW20    TSSOP-20         1    1                            MSP430G2x53, MSP430G2x13 Mixed Signal Microcontroller 20-TSSOP -40 to 85 
+ Programming Header  HDR1X4           1    P1                           Header, 4-Pin        
+ Res1                AXIAL-0.3        1    R3                           Resistor             
+ Res1                RESC2012X70     20    R1, R2, R4, R5, R6, R7, R8   Resistor             
+                                           R9, R10, R11, R12, R13, R14
+                                           R15, R16, R17, R18, R19, R20
+                                           R21
+ Reset Pins          HDR1X2           1    P2                           Header, 2-Pin        
+ TCAN332GDCNR        SOT65P280X145-8N    1    U1                           3.3-V CAN Transceivers with CAN FD _Flexible Data Rate_ 8-SOT-23 -40 to 125 
+ TLP152              SOIC127P375X700X220-5N    4    U2, U4, U5, U6               Optocoupler, Gate Driver, 3.75kv, Smdip 
+ TPS62177            SON80P400X400X80-10N    1    *1                                                
