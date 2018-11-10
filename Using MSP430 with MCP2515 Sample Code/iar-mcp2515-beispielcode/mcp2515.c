@@ -3,14 +3,14 @@
 //####################################################################################################################################################################################
 //                                                                      MCP2515_SPI_init()
 //
-// Initialisiert SPI-UCB0 des Mikrocontrollers MSP430G2553. Beachte der MSP430G2553 besitzt zusätzlich den UCA0 für SPI.
+// Initializes SPI-UCB0 microcontroller MSP430G2553. Note the MSP430G2553 also has the UCA0 for SPI.
 //
 void MCP2515_SPI_init(void)
 {  
-  P1SEL = BIT5 + BIT6 + BIT7;                                                    // Spezial Funktion SCK, MOSI und MISO ...
-  P1SEL2 = BIT5 + BIT6 + BIT7;                                                   // (Falls P1SEL2 unterstützt).-
+  P1SEL = BIT5 + BIT6 + BIT7;                                                    // Special Function SCK, MOSI und MISO ...
+  P1SEL2 = BIT5 + BIT6 + BIT7;                                                   // (Falls P1SEL2 supports).-
   
-  P2DIR |= BIT5;                                                                 // !CS-Leitung (beachte auch Defines MCP2515_CS_LOW und MCP2515_CS_High)  ...
+  P2DIR |= BIT5;                                                                 // ! CS-line (also note Defines MCP2515_CS_LOW and MCP2515_CS_High)  ...
   P2OUT |= BIT5;                                                                 // .-
   
   UCB0CTL1 |= UCSWRST;                                                           // Reset
@@ -21,45 +21,46 @@ void MCP2515_SPI_init(void)
   //UCA0MCTL = 0;                                                                // No modulation
   UCB0CTL1 &= ~UCSWRST;                                                          // Initialize USCI state machine
 
-  __delay_cycles(DELAY_100ms);                                                   // Warte 100ms
-  while (!(IFG2 & UCB0TXIFG));                                                   // Warte bist übermittelt
-  UCB0TXBUF = 0x00;                                                              // Dummy Senden 
+  __delay_cycles(DELAY_100ms);                                                   // Wait 100ms
+  while (!(IFG2 & UCB0TXIFG));                                                   // Wait until delivered
+  UCB0TXBUF = 0x00;                                                              // Dummy Send 
 } 
 
 //####################################################################################################################################################################################
 //                                                                     MCP2515_SPI_transmit()
 //
-// Senden und Empfangen über SPI-UCB0.
+
+// send and receive via SPI-UCB0.
 //
-//                               Variablen
-// @ daten    : Unsigned 8-Bit-Datensatz der über UCB0 via SPI gesendet werden soll
+// variables
+// @ data: Unsigned 8-bit data set to be sent via UCB0 via SPI
 //
-// @ rückgabe : Unsigned 8-Bit-Datensatz der über UCB0 via SPI empfangen wird
-//
+// @ return: Unsigned 8-bit data set received via UCB0 via SPI//
 unsigned char MCP2515_SPI_transmit(unsigned char daten)
 {   
-  UCB0TXBUF = daten;                                                             // Sende Datensatz
-  while(UCB0STAT & UCBUSY);                                                      // Warte bist übermittelt
-  return UCB0RXBUF;                                                              // Gebe empfangenen Datensatz zurück    
+  UCB0TXBUF = daten;                                                             // Send record
+  while(UCB0STAT & UCBUSY);                                                      // Wait until delivered
+  return UCB0RXBUF;                                                              // Return received record
 } 
 
 //####################################################################################################################################################################################
 //                                                                      MCP2515_spi_test()
 //
-// Teste ob MCP2515 funktioniert. 
-// Dazu: 1. Schreibe etwas in den Registern und lesen die Register daraufhin aus
-//       2. Vergleiche das empfangene mit dem beschiebenen Array. Falls ungleich Kommunikations-Fehler. Sonst alles OK             
+// test if MCP2515 works.
+// To do this: 1. Write something in the registers and then read out the registers
+// 2. Compare the received with the gated array. If uneven communication error. Otherwise everything OK
 //
-//                               Variablen
-// @ rückgabe : Unsigned 8-Bit-Datensatz (TRUE oder FALSE); TRUE = 1 = MCP2515 OK, FALSE = 0 = MCP2515 Fehler
-//
-BOOL MCP2515_spi_test (void)
+// variables
+// @ return: unsigned 8-bit record (TRUE or FALSE); TRUE = 1 = MCP2515 OK, FALSE = 0 = MCP2515 Error
+//BOOL MCP2515_spi_test (void)
 {
-  uint16_t data_rcv[11] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};                     // Array der empfangenen Daten. Mit 0 Initialisieren
-  uint16_t data_snd[11]={0x88,0x03,0x90,0x02,0x05,0x02,0x3f,0x23,0x40,0x40,0x00};// Array der zu sendenen Daten.
+  uint16_t data_rcv[11] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};                     // array of received data. Initialize with 0
+  uint16_t data_snd[11]={0x88,0x03,0x90,0x02,0x05,0x02,0x3f,0x23,0x40,0x40,0x00};// Array of data to send.
   
-  MCP2515_write(MCP2515_CANCTRL, data_snd[0]);                                   // 1. Gehe im Konfig-Mode. Zum Überprüfen, ...
-  data_rcv[0]=MCP2515_read(MCP2515_CANCTRL);                                     // schreibe zuerst in den Registern etwas und anschließend lese es aus. ...
+  MCP2515_write(MCP2515_CANCTRL, data_snd[0]);                                   
+// 1. Go in config mode. To check, ...
+  data_rcv[0]=MCP2515_read(MCP2515_CANCTRL);                                     
+// first write something in the tabs and then read it. ...
   
   MCP2515_write(MCP2515_CNF1,data_snd[1]);                                       // ...
   MCP2515_write(MCP2515_CNF2,data_snd[2]);                                       // ...
@@ -80,48 +81,61 @@ BOOL MCP2515_spi_test (void)
   MCP2515_write(MCP2515_TXB1SIDL, data_snd[9]);                                  // ...
   data_rcv[9]=MCP2515_read(MCP2515_TXB1SIDL);                                    // ...
   
-  MCP2515_write(MCP2515_CANCTRL, data_snd[10]);                                  // ... (gehe auch zum Normalmodus)
+  MCP2515_write(MCP2515_CANCTRL, data_snd[10]);                                  // ... (also go to normal mode)
   data_rcv[10]=MCP2515_read(MCP2515_CANCTRL);                                    // .-
   
-  for(char i = 0; i < 11; i++)                                                   // 2. Vergleiche das empfangene mit dem beschiebenen Array. ...       
+  for(char i = 0; i < 11; i++)                                                   
+// 2. Compare the received with the gated array. ...
   {                                                                              // ...
-    if(data_snd[i] != data_rcv[i]) return FALSE;                                 // Falls Ungleich. Kommunikation Fehlerhaft (FALSE = 0). ...
-  } // for                                                                       // Sonst ...
+    if(data_snd[i] != data_rcv[i]) return FALSE;                                 
+// if unequal. Communication Faulty (FALSE = 0). ...
+  } // for                                                                       // Otherwise ...
   
-  MCP2515_init();                                                                // Muss neu Initialisieren da ich dem MCP2515 manipuliert habe. ...
-  return TRUE;                                                                   // Sende das Kommunikation mit MCP2515 stabil ist (TRUE = 1).-
+  MCP2515_init();                                                                
+// I need to reinitialize because I've manipulated the MCP2515. ...
+  return TRUE;                                                                   
+// send the communication with MCP2515 is stable (TRUE = 1) .-
 }
 
 //####################################################################################################################################################################################
 //                                                                      MCP2515_reset()
 //
-// Resetet den MCP2515, dabei soll Hardware oder Software-Reset die gleiche auswirkung haben laut Datenblatt Seite 63
+
+// Resets the MCP2515, hardware or software reset should have the same effect according to data sheet page 63
 //
 void MCP2515_reset (void)
 {
-  MCP2515_CS_LOW;                                                                // Starte Kommunikation indem ich !CS auf Low Ziehe. Sende ...  
-  MCP2515_SPI_transmit(MCP2515_RESET);                                           // Resetbefehl 0xC0. Hardware- oder Software-Reset haben laut Datenblatt die gleiche auswirkung. ... 
-  MCP2515_CS_HIGH;                                                               // Beende den Frame in dem ich !CS wieder auf High setze und ...
+  MCP2515_CS_LOW;
+// start communication by pulling! CS to low. Send ...
+  MCP2515_SPI_transmit(MCP2515_RESET);                                           
+// reset command 0xC0. Hardware or software reset are loudDatenblatt die gleiche auswirkung. ... 
+  MCP2515_CS_HIGH;                                                               
+// Finish the frame by setting CS to high again and ...
   
-  __delay_cycles(DELAY_100us);                                                   // warte ein bischen.-
+  __delay_cycles(DELAY_100us);                                                   
+// wait a bit.-
 }
 
 //####################################################################################################################################################################################
 //                                                                 MCP2515_CanVariable_init()
 //
-// Im Projekt möchte ich eine Variable haben die alle CAN-Eigenschaften einer Information zusammenbündelt. Bevor ich diese nutze solle zuerst die Variable initialisiert werden.
+
+// In the project, I want to have a variable that bundles all the CAN properties of an information together. Before I use these, the variable should first be initialized.
 //
-//                               Variablen
-// @ can      : Struckt für CAN-Variable. Siehe "MCP2515.h"
-//
-void MCP2515_CanVariable_init (can_t *can)
+// variables
+// @ can: prints for CAN variable. See "MCP2515.h"
+//void MCP2515_CanVariable_init (can_t *can)
 {
-  can->COB_ID = 0x181;                                                           // ID der Information
-  can->status = 0x01;                                                            // Zufalswert als Beispiel                                             
-  can->dlc = CAN_DLC;                                                            // Länge der Information (0 bis 8)
-  can->rtr = CAN_RTR;                                                            // Request Data oder sende
-  can->ext = CAN_EXTENDET;                                                       // Extender oder standart ID, hier standart genutzt
-  for(char i = 0; i < CAN_DLC; i++)can->data[i] = 0;                             // Initialisiere mit 0
+  can->COB_ID = 0x181;                                                           // ID of the Information
+  can->status = 0x01;                                                            // Random value as an example
+  can->dlc = CAN_DLC;                                                            
+// length of information (0 to 8)
+  can->rtr = CAN_RTR;                                                            
+// request data or send
+  can->ext = CAN_EXTENDET;                                                       
+// Extender or standard ID, used here as standard
+  for(char i = 0; i < CAN_DLC; i++)can->data[i] = 0;                             
+// initialize with 0
 }
 
 
@@ -129,36 +143,41 @@ void MCP2515_CanVariable_init (can_t *can)
 //####################################################################################################################################################################################
 //                                                                      MCP2515_write()
 //
-// In einem einzelnen Register des MCP2515 über SPI Schreiben
+// Write in a single register of the MCP2515 via SPI
 //
-//                               Variablen
-// @ addr     : Adresse des MCP2515
-// @ data     : Unsigned 8-Bit-Datensatz
-//
-void MCP2515_write (uint8_t addr, uint8_t data)
+// variables
+// @ addr: address of the MCP2515
+// @data: Unsigned 8-bit record
+
+//void MCP2515_write (uint8_t addr, uint8_t data)
 {
-  MCP2515_CS_LOW;                                                                // Starte Frame in dem ich !CS auf Low Ziehe. Sende ...
+  MCP2515_CS_LOW;                                                                
+// start frame in which I! CS on low draw. Send ...
   
-  MCP2515_SPI_transmit(MCP2515_WRITE);                                           // Schreibbefehl ; Befehl 0x02, ...
-  MCP2515_SPI_transmit(addr);                                                    // sende Befehl (Register-Adresse), ...
-  MCP2515_SPI_transmit(data);                                                    // sende Daten für diese Adresse, ...
+  MCP2515_SPI_transmit(MCP2515_WRITE);                                           
+// write command; Command 0x02, ...
+  MCP2515_SPI_transmit(addr);                                                    
+// send command (register address), ...
+  MCP2515_SPI_transmit(data);                                                    
+// send data for this address, ...
   
-  MCP2515_CS_HIGH;                                                               // Beende den Frame in dem ich !CS wieder auf High setze und ...
+  MCP2515_CS_HIGH;                                                               
+// Finish the frame by setting CS to high again and ...
   
-  __delay_cycles(DELAY_1ms);                                                     // warte ein bischen.-
+  __delay_cycles(DELAY_1ms);                                                     // wait a bit.-
 }
 
 //####################################################################################################################################################################################
 //                                                                 MCP2515_write_many_registers()
 //
-// Um mehrere Register des MCP2515 mit einem Befehl zu beschreiben.
+
+// To describe several registers of the MCP2515 with one command.
 //
-//                               Variablen
-// @ addr     : Adresse des MCP2515
-// @ len      : Länge des Array-Datensatzes (data) das gesendet werden soll
-// @ data     : Unsigned 8-Bit-Datensatz
-//
-void MCP2515_write_many_registers(uint8_t addr, uint8_t len, uint8_t *data)
+// variables
+// @ addr: address of the MCP2515
+// @ len: Length of the array data record (data) to be sent
+// @data: Unsigned 8-bit record
+//void MCP2515_write_many_registers(uint8_t addr, uint8_t len, uint8_t *data)
 { 
   MCP2515_CS_LOW;                                                                // Starte Frame in dem ich !CS auf Low Ziehe. Sende ...
   
