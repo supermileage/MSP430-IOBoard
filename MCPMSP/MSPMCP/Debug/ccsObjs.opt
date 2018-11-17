@@ -1,0 +1,1 @@
+"./main.obj" "./mcp2515.obj" "../lnk_msp430g2553.cmd" -llibc.a 
