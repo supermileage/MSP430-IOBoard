@@ -1,7 +1,22 @@
 
 **** Build of configuration Debug for project MSPMCP ****
 
-"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 4 all -O 
-gmake[1]: 'MSPMCP.out' is up to date.
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 58: error #80: expected a type specifier
+"../main.c", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 56: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 66: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_rx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 67: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 68: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_tx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
 
 **** Build Finished ****

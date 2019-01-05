@@ -49,3 +49,558 @@ gmake[1]: 'MSPMCP.out' is up to date.
 gmake[1]: 'MSPMCP.out' is up to date.
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 53: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 61: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_rx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 62: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 63: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_tx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building file: "../mcp2515.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="mcp2515.d_raw"  "../mcp2515.c"
+"../mcp2515.c", line 25: remark #1528-D: (ULP 3.1) Detected flag polling using IFG2. Recommend using an interrupt combined with enter LPMx and ISR
+"../mcp2515.c", line 24: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 42: remark #1528-D: (ULP 3.1) Detected flag polling using UCBUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../mcp2515.c", line 86: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 125: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 149: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 169: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 224: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 255: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 256: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 260: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 265: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 316: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 341: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 477: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 483: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 500: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 506: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+Finished building: "../mcp2515.c"
+ 
+Building target: "MSPMCP.out"
+Invoking: MSP430 Linker
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"MSPMCP.map" --heap_size=80 --stack_size=80 -i"C:/TI/ccsv8/ccs_base/msp430/include" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/lib" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="MSPMCP_linkInfo.xml" --use_hw_mpy=none --rom_model -o "MSPMCP.out" "./main.obj" "./mcp2515.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "MSPMCP.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSPMCP.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSPMCP.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSPMCP.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSPMCP.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 53: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 61: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_rx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 62: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 63: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_tx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building file: "../mcp2515.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="mcp2515.d_raw"  "../mcp2515.c"
+"../mcp2515.c", line 25: remark #1528-D: (ULP 3.1) Detected flag polling using IFG2. Recommend using an interrupt combined with enter LPMx and ISR
+"../mcp2515.c", line 24: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 42: remark #1528-D: (ULP 3.1) Detected flag polling using UCBUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../mcp2515.c", line 86: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 125: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 149: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 169: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 224: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 255: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 256: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 260: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 265: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 316: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 341: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 478: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 484: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 501: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 507: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+Finished building: "../mcp2515.c"
+ 
+Building target: "MSPMCP.out"
+Invoking: MSP430 Linker
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"MSPMCP.map" --heap_size=80 --stack_size=80 -i"C:/TI/ccsv8/ccs_base/msp430/include" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/lib" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="MSPMCP_linkInfo.xml" --use_hw_mpy=none --rom_model -o "MSPMCP.out" "./main.obj" "./mcp2515.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "MSPMCP.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSPMCP.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSPMCP.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSPMCP.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSPMCP.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 56: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 57: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 66: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_rx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 67: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 68: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_tx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building file: "../mcp2515.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="mcp2515.d_raw"  "../mcp2515.c"
+"../mcp2515.c", line 25: remark #1528-D: (ULP 3.1) Detected flag polling using IFG2. Recommend using an interrupt combined with enter LPMx and ISR
+"../mcp2515.c", line 24: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 42: remark #1528-D: (ULP 3.1) Detected flag polling using UCBUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../mcp2515.c", line 86: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 125: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 149: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 169: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 224: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 255: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 256: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 260: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 265: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 316: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 341: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 478: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 484: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 501: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 507: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+Finished building: "../mcp2515.c"
+ 
+Building target: "MSPMCP.out"
+Invoking: MSP430 Linker
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"MSPMCP.map" --heap_size=80 --stack_size=80 -i"C:/TI/ccsv8/ccs_base/msp430/include" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/lib" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="MSPMCP_linkInfo.xml" --use_hw_mpy=none --rom_model -o "MSPMCP.out" "./main.obj" "./mcp2515.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "MSPMCP.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSPMCP.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSPMCP.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 56: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 57: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 66: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_rx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 67: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 68: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_tx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "MSPMCP.out"
+Invoking: MSP430 Linker
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"MSPMCP.map" --heap_size=80 --stack_size=80 -i"C:/TI/ccsv8/ccs_base/msp430/include" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/lib" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="MSPMCP_linkInfo.xml" --use_hw_mpy=none --rom_model -o "MSPMCP.out" "./main.obj" "./mcp2515.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "MSPMCP.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSPMCP.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 56: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 57: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 66: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_rx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 67: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 68: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_tx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "MSPMCP.out"
+Invoking: MSP430 Linker
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"MSPMCP.map" --heap_size=80 --stack_size=80 -i"C:/TI/ccsv8/ccs_base/msp430/include" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/lib" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="MSPMCP_linkInfo.xml" --use_hw_mpy=none --rom_model -o "MSPMCP.out" "./main.obj" "./mcp2515.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "MSPMCP.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSPMCP.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../mcp2515.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="mcp2515.d_raw"  "../mcp2515.c"
+"../mcp2515.c", line 25: remark #1528-D: (ULP 3.1) Detected flag polling using IFG2. Recommend using an interrupt combined with enter LPMx and ISR
+"../mcp2515.c", line 24: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 42: remark #1528-D: (ULP 3.1) Detected flag polling using UCBUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../mcp2515.c", line 86: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 125: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 149: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 169: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 224: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 255: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 256: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 260: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 265: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 316: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 341: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 478: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 484: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 501: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 507: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+Finished building: "../mcp2515.c"
+ 
+Building target: "MSPMCP.out"
+Invoking: MSP430 Linker
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"MSPMCP.map" --heap_size=80 --stack_size=80 -i"C:/TI/ccsv8/ccs_base/msp430/include" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/lib" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="MSPMCP_linkInfo.xml" --use_hw_mpy=none --rom_model -o "MSPMCP.out" "./main.obj" "./mcp2515.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "MSPMCP.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../mcp2515.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="mcp2515.d_raw"  "../mcp2515.c"
+"../mcp2515.c", line 25: remark #1528-D: (ULP 3.1) Detected flag polling using IFG2. Recommend using an interrupt combined with enter LPMx and ISR
+"../mcp2515.c", line 24: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 42: remark #1528-D: (ULP 3.1) Detected flag polling using UCBUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../mcp2515.c", line 86: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 125: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 149: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 169: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 224: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 255: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 256: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 260: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 265: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 316: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 341: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 478: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 484: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 501: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 507: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+Finished building: "../mcp2515.c"
+ 
+Building target: "MSPMCP.out"
+Invoking: MSP430 Linker
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"MSPMCP.map" --heap_size=80 --stack_size=80 -i"C:/TI/ccsv8/ccs_base/msp430/include" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/lib" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="MSPMCP_linkInfo.xml" --use_hw_mpy=none --rom_model -o "MSPMCP.out" "./main.obj" "./mcp2515.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "MSPMCP.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../mcp2515.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="mcp2515.d_raw"  "../mcp2515.c"
+"../mcp2515.c", line 25: remark #1528-D: (ULP 3.1) Detected flag polling using IFG2. Recommend using an interrupt combined with enter LPMx and ISR
+"../mcp2515.c", line 24: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 42: remark #1528-D: (ULP 3.1) Detected flag polling using UCBUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../mcp2515.c", line 86: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 125: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 149: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 169: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 224: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 255: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 256: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 260: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 265: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../mcp2515.c", line 316: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 341: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 478: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 484: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../mcp2515.c", line 501: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../mcp2515.c", line 507: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+Finished building: "../mcp2515.c"
+ 
+Building target: "MSPMCP.out"
+Invoking: MSP430 Linker
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"MSPMCP.map" --heap_size=80 --stack_size=80 -i"C:/TI/ccsv8/ccs_base/msp430/include" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/lib" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="MSPMCP_linkInfo.xml" --use_hw_mpy=none --rom_model -o "MSPMCP.out" "./main.obj" "./mcp2515.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "MSPMCP.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSPMCP.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'MSPMCP.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 56: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 65: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_rx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 66: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 67: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_tx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "MSPMCP.out"
+Invoking: MSP430 Linker
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"MSPMCP.map" --heap_size=80 --stack_size=80 -i"C:/TI/ccsv8/ccs_base/msp430/include" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/lib" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="MSPMCP_linkInfo.xml" --use_hw_mpy=none --rom_model -o "MSPMCP.out" "./main.obj" "./mcp2515.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "MSPMCP.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 56: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 65: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_rx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 66: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 67: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_tx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "MSPMCP.out"
+Invoking: MSP430 Linker
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"MSPMCP.map" --heap_size=80 --stack_size=80 -i"C:/TI/ccsv8/ccs_base/msp430/include" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/lib" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="MSPMCP_linkInfo.xml" --use_hw_mpy=none --rom_model -o "MSPMCP.out" "./main.obj" "./mcp2515.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+Finished building target: "MSPMCP.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+"../main.c", line 58: warning #225-D: function "printf" declared implicitly
+"../main.c", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 56: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 58: remark #1532-D: (ULP 5.3) Detected printf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../main.c", line 66: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_rx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 67: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 68: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_tx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+Finished building: "../main.c"
+ 
+Building target: "MSPMCP.out"
+Invoking: MSP430 Linker
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"MSPMCP.map" --heap_size=80 --stack_size=80 -i"C:/TI/ccsv8/ccs_base/msp430/include" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/lib" -i"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="MSPMCP_linkInfo.xml" --use_hw_mpy=none --rom_model -o "MSPMCP.out" "./main.obj" "./mcp2515.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+"../lnk_msp430g2553.cmd", line 91: error #10099-D: program will not fit into available memory.  run placement with alignment fails for section ".data" size 0xfc .  Available memory ranges:
+   RAM          size: 0x200        unused: 0xe0         max hole: 0xe0      
+"../lnk_msp430g2553.cmd", line 94: error #10099-D: program will not fit into available memory.  run placement with alignment fails for section ".stack" size 0x50 .  Available memory ranges:
+   RAM          size: 0x200        unused: 0x12         max hole: 0x12      
+"../lnk_msp430g2553.cmd", line 93: error #10099-D: program will not fit into available memory.  run placement with alignment fails for section ".sysmem" size 0x50 .  Available memory ranges:
+   RAM          size: 0x200        unused: 0x12         max hole: 0x12      
+remark #10371-D: (ULP 1.1) Detected no uses of low power mode state changing instructions
+error #10010: errors encountered during linking; "MSPMCP.out" not built
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+ 
+>> Compilation failure
+makefile:142: recipe for target 'MSPMCP.out' failed
+gmake[1]: *** [MSPMCP.out] Error 1
+makefile:138: recipe for target 'all' failed
+gmake: *** [all] Error 2
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 58: error #80: expected a type specifier
+"../main.c", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 56: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 66: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_rx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 67: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 68: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_tx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project MSPMCP ****
+
+"C:\\TI\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+Building file: "../main.c"
+Invoking: MSP430 Compiler
+"C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/TI/ccsv8/ccs_base/msp430/include" --include_path="C:/Users/Taylor/Documents/GitHub/MSP430-IOBoard/MCPMSP/MSPMCP" --include_path="C:/TI/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+ 
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'main.obj' failed
+"../main.c", line 58: error #80: expected a type specifier
+"../main.c", line 27: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../main.c", line 56: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 66: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_rx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../main.c", line 67: remark #1527-D: (ULP 2.1) Detected SW delay loop using __delay_cycles. Recommend using a timer module instead
+"../main.c", line 68: remark #1538-D: (ULP 10.1) ISR Port_1 calls function MCP2515_can_tx0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+1 error detected in the compilation of "../main.c".
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
